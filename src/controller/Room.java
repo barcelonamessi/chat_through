@@ -35,8 +35,22 @@ public class Room implements Initializable{
 	private BufferedReader keyboard=null;
 	private PrintWriter out;
 	private BufferedReader socket_in=null;
-	//private String cur_id;
+	private String cur_id;
 	
+	
+	
+	public String getCur_id() {
+		return cur_id;
+	}
+
+
+
+	public void setCur_id(String cur_id) {
+		this.cur_id = cur_id;
+	}
+
+
+
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		
@@ -90,7 +104,7 @@ public class Room implements Initializable{
         input_text.setOnKeyPressed(event->{
         	if(event.getCode()==KeyCode.ENTER){
         		String str=input_text.getText().trim();
-    			out.println(str);
+    			out.println(cur_id+ " : " +str);
     			
     			input_text.setText("");
     			
@@ -115,7 +129,7 @@ public class Room implements Initializable{
 		send.setOnMouseClicked(event->{
 			System.out.println("send clicked");
 			String str=input_text.getText().trim();
-			out.println(str);
+			out.println(cur_id+ " : " +str);
 			//
 			input_text.setText("");
 			

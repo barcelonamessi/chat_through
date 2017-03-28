@@ -80,7 +80,13 @@ public class MainGUIController implements Initializable{
 					
 					//myResources=ResourceBundle.getBundle("id", );
 					//Controller custom=new Controller("")
-					root=FXMLLoader.load(getClass().getResource("/room/room.fxml"));
+					FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("/room/room.fxml"));
+					root=(Parent)fxmlLoader.load();
+					Room controller=fxmlLoader.<Room>getController();
+					controller.setCur_id(id);
+					//root=FXMLLoader.load(getClass().getResource("/room/room.fxml"));
+					
+					
 					CustomScene scene=new CustomScene(root, id);
 					//Scene scene=new Scene(root);
 					root.setUserData(id);

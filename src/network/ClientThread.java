@@ -10,6 +10,7 @@ public class ClientThread implements Runnable
 { 
     Socket socket = null;
     TextArea ta=null;
+    String id=null;
     public ClientThread(Socket socket, TextArea ta) { 
         this.socket = socket; 
         this.ta=ta;
