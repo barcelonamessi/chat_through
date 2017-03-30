@@ -4,9 +4,9 @@ import java.sql.Timestamp;
 public class Conversation implements Serializable{
 
 	private static final long serialVersionUID = 1L;
-	private String id;
-	private Timestamp time;
-	private String text;
+	public String id;
+	public Timestamp time;
+	public String text;
 	public String getId() {
 		return id;
 	}
